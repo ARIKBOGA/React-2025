@@ -1,0 +1,19 @@
+
+function Header({ title, onUpdateTitle, onOpenAddModal }: { title: string, onUpdateTitle: (newTitle: string) => void, onOpenAddModal: () => void }) {
+    return (
+        <div className="table-title">
+            <div className="row">
+                <div className="col-sm-6">
+                    <h2>{title}</h2>
+                </div>
+                <div className="col-sm-6">
+                    <button className="btn btn-success" onClick={() => onUpdateTitle("New Title (Updated)")}>Change Title</button>
+                    <button className="btn btn-success" onClick={() => onOpenAddModal()}><i className="material-icons">&#xE147;</i> <span>Add New Employee</span></button>
+                    <a href="#deleteEmployeeModal" className="btn btn-danger" data-toggle="modal"><i className="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Header;
